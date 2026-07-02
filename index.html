@@ -464,10 +464,14 @@
     .nav-links, .nav-cta { display: none; }
     .nav-links.mobile-open { display: flex; flex-direction: column; position: fixed; top: 56px; left: 0; right: 0; width: 100%; background: #fff; padding: 20px 24px; gap: 16px; border-bottom: 1px solid #e9ecef; z-index: 9999; box-sizing: border-box; }
     .nav-right { display: flex; margin-left: 0; gap: 6px; }
-    .lang-switch { grid-template-columns: repeat(4, 22px); gap: 3px; }
-    .lang-flag { width: 22px; height: 16px; }
-    .logo-full { display: none; }
-    .logo-short { display: inline; }
+    .lang-switch { grid-template-columns: 30px; gap: 0; }
+    .lang-flag { width: 26px; height: 19px; }
+    .lang-flag[data-lang="es"],
+    .lang-flag[data-lang="fr"],
+    .lang-flag[data-lang="de"] { display: none; }
+    .logo-full { display: inline; }
+    .logo-short { display: none; }
+    .logo { font-size: 1rem; }
     .menu-toggle { display: flex; }
     .nav { padding: 14px 16px; }
     .logo { font-size: 1.1rem; }
