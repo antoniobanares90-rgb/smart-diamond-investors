@@ -459,8 +459,14 @@
     font-size: 0.85rem;
   }
 
+  .logo-short { display: none; }
   @media (max-width: 860px) {
-    .nav-links, .nav-cta, .nav-right { display: none !important; }
+    .nav-links, .nav-cta { display: none !important; }
+    .nav-right { display: flex; margin-left: 0; gap: 6px; }
+    .lang-switch { grid-template-columns: repeat(4, 22px); gap: 3px; }
+    .lang-flag { width: 22px; height: 16px; }
+    .logo-full { display: none; }
+    .logo-short { display: inline; }
     .menu-toggle { display: flex; }
     .nav { padding: 14px 16px; }
     .logo { font-size: 1.1rem; }
@@ -480,7 +486,7 @@
 
 <header>
   <nav class="nav">
-    <a href="#" class="logo">Smart Diamond Investors<sup>®</sup></a>
+    <a href="#" class="logo"><span class="logo-full">Smart Diamond Investors<sup>®</sup></span><span class="logo-short">SDI<sup>®</sup></span></a>
     <ul class="nav-links">
       <li><a href="#sobre-nosotros" data-en="About us">Sobre nosotros</a></li>
       <li><a href="#fundador" data-en="Founder">Fundador</a></li>
@@ -739,24 +745,23 @@
 
 <script>
   // Mobile menu toggle
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    var links = document.querySelector('.nav-links');
-    var cta = document.querySelector('.nav-cta');
-    var visible = links.style.display === 'flex';
-    links.style.display = visible ? 'none' : 'flex';
-    cta.style.display = visible ? 'none' : 'block';
-    links.style.flexDirection = 'column';
-    links.style.position = 'fixed';
-    links.style.top = '64px';
-    links.style.left = '0';
-    links.style.right = '0';
-    links.style.width = '100%';
-    links.style.background = '#fff';
-    links.style.padding = '20px 24px';
-    links.style.gap = '16px';
-    links.style.borderBottom = '1px solid #e9ecef';
-    links.style.zIndex = '999';
-    links.style.boxSizing = 'border-box';
+  var menuToggle = document.querySelector('.menu-toggle');
+  var navLinks = document.querySelector('.nav-links');
+  var menuOpen = false;
+  menuToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      navLinks.style.cssText = 'display:flex !important; flex-direction:column; position:fixed; top:56px; left:0; right:0; width:100%; background:#fff; padding:20px 24px; gap:16px; border-bottom:1px solid #e9ecef; z-index:9999; box-sizing:border-box;';
+    } else {
+      navLinks.style.cssText = 'display:none !important;';
+    }
+  });
+  document.addEventListener('click', function() {
+    if (menuOpen) {
+      menuOpen = false;
+      navLinks.style.cssText = 'display:none !important;';
+    }
   });
 
   // Footer year
