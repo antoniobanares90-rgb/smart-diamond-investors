@@ -752,15 +752,27 @@
     e.stopPropagation();
     menuOpen = !menuOpen;
     if (menuOpen) {
-      navLinks.style.cssText = 'display:flex !important; flex-direction:column; position:fixed; top:56px; left:0; right:0; width:100%; background:#fff; padding:20px 24px; gap:16px; border-bottom:1px solid #e9ecef; z-index:9999; box-sizing:border-box;';
+      navLinks.style.display = 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'fixed';
+      navLinks.style.top = '56px';
+      navLinks.style.left = '0';
+      navLinks.style.right = '0';
+      navLinks.style.width = '100%';
+      navLinks.style.background = '#fff';
+      navLinks.style.padding = '20px 24px';
+      navLinks.style.gap = '16px';
+      navLinks.style.borderBottom = '1px solid #e9ecef';
+      navLinks.style.zIndex = '9999';
+      navLinks.style.boxSizing = 'border-box';
     } else {
-      navLinks.style.cssText = 'display:none !important;';
+      navLinks.style.display = 'none';
     }
   });
-  document.addEventListener('click', function() {
-    if (menuOpen) {
+  document.addEventListener('click', function(e) {
+    if (menuOpen && !menuToggle.contains(e.target)) {
       menuOpen = false;
-      navLinks.style.cssText = 'display:none !important;';
+      navLinks.style.display = 'none';
     }
   });
 
