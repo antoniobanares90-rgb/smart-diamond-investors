@@ -206,6 +206,17 @@
   /* Sections */
   section { padding: 80px 0; }
   .section-alt { background: var(--color-bg-alt); }
+
+  /* SLIDER */
+  .slider-section { overflow: hidden; background: #f8f6f2; padding: 24px 0; }
+  .slider-track { overflow: hidden; width: 100%; }
+  .slider-inner { display: flex; gap: 20px; width: max-content; animation: slideLeft 30s linear infinite; }
+  .slider-inner img { height: 200px; width: auto; border-radius: 10px; object-fit: cover; flex-shrink: 0; box-shadow: 0 4px 16px rgba(0,0,0,0.10); }
+  @keyframes slideLeft {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .slider-inner:hover { animation-play-state: paused; }
   .section-header {
     text-align: center;
     max-width: 640px;
@@ -569,6 +580,29 @@
     <div class="about-image" data-en="[Space for corporate image / gold bars]">[Espacio para imagen corporativa / lingotes de oro]</div>
   </div>
 </section>
+
+<!-- IMAGE SLIDER -->
+<div class="slider-section">
+  <div class="slider-track">
+    <div class="slider-inner" id="sliderInner">
+      <img src="img/slide1.png" alt="Smart Diamond Investors">
+      <img src="img/slide2.jpg" alt="Smart Diamond Investors">
+      <img src="img/slide3.png" alt="Smart Diamond Investors">
+      <img src="img/slide4.jpg" alt="Smart Diamond Investors">
+      <img src="img/slide5.png" alt="Smart Diamond Investors">
+      <img src="img/slide6.jpg" alt="Smart Diamond Investors">
+      <img src="img/slide8.png" alt="Smart Diamond Investors">
+      <!-- duplicadas para loop continuo -->
+      <img src="img/slide1.png" alt="Smart Diamond Investors">
+      <img src="img/slide2.jpg" alt="Smart Diamond Investors">
+      <img src="img/slide3.png" alt="Smart Diamond Investors">
+      <img src="img/slide4.jpg" alt="Smart Diamond Investors">
+      <img src="img/slide5.png" alt="Smart Diamond Investors">
+      <img src="img/slide6.jpg" alt="Smart Diamond Investors">
+      <img src="img/slide8.png" alt="Smart Diamond Investors">
+    </div>
+  </div>
+</div>
 
 <section id="fundador" class="section-alt">
   <div class="container about-grid reveal visible">
