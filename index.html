@@ -709,11 +709,11 @@
       <div class="form-row">
         <div>
           <label for="name" data-en="Full name">Nombre y apellidos</label>
-          <input type="text" id="name" placeholder="Tu nombre y apellidos" data-en-ph="Your full name" required>
+          <input type="text" id="name" name="nombre" placeholder="Tu nombre y apellidos" data-en-ph="Your full name" required>
         </div>
         <div>
           <label for="email" data-en="Email">Email</label>
-          <input type="email" id="email" placeholder="tu@email.com" required>
+          <input type="email" id="email" name="email" placeholder="tu@email.com" required>
         </div>
       </div>
       <div>
@@ -731,12 +731,12 @@
       </div>
       <div id="empresa-field" style="display:none;">
         <label for="empresa" data-en="Company name">Nombre de la empresa</label>
-        <input type="text" id="empresa" placeholder="Nombre de tu empresa" data-en-ph="Your company name">
+        <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" data-en-ph="Your company name">
       </div>
       <div>
         <label data-en="Phone (optional)">Teléfono (opcional)</label>
         <div style="display:flex; gap:8px;">
-          <select id="prefijo" style="padding:12px 10px; border:1px solid #d8dde2; border-radius:6px; font-size:0.95rem; font-family:inherit; background:#fff; color:var(--color-text); flex-shrink:0;">
+          <select id="prefijo" name="prefijo" style="padding:12px 10px; border:1px solid #d8dde2; border-radius:6px; font-size:0.95rem; font-family:inherit; background:#fff; color:var(--color-text); flex-shrink:0;">
             <option value="+34">🇪🇸 +34</option>
             <option value="+1">🇺🇸 +1</option>
             <option value="+44">🇬🇧 +44</option>
@@ -756,17 +756,19 @@
             <option value="+32">🇧🇪 +32</option>
             <option value="+31">🇳🇱 +31</option>
           </select>
-          <input type="tel" id="telefono" placeholder="600 000 000" style="flex:1;">
+          <input type="tel" id="telefono" name="telefono" placeholder="600 000 000" style="flex:1;">
         </div>
       </div>
       <div>
         <label for="subject" data-en="Subject">Asunto</label>
-        <input type="text" id="subject" placeholder="Volumen e interés de inversión" data-en-ph="Investment volume and interest" required>
+        <input type="text" id="subject" name="asunto" placeholder="Volumen e interés de inversión" data-en-ph="Investment volume and interest" required>
       </div>
       <div>
         <label for="message" data-en="Message">Mensaje</label>
-        <textarea id="message" rows="5" placeholder="Cuéntanos sobre tu consulta de inversión..." data-en-ph="Tell us about your investment inquiry..." required></textarea>
+        <textarea id="message" name="mensaje" rows="5" placeholder="Cuéntanos sobre tu consulta de inversión..." data-en-ph="Tell us about your investment inquiry..." required></textarea>
       </div>
+      <input type="hidden" name="_replyto" id="_replyto">
+      <input type="hidden" name="_subject" value="Nueva consulta — Smart Diamond Investors">
       <button type="submit" data-en="Send message">Enviar mensaje</button>
     </form>
   </div>
@@ -819,6 +821,15 @@
 
   // Footer year
   document.getElementById('copyYear').textContent = new Date().getFullYear();
+
+  // Sync email to _replyto for Formspree
+  var emailInput = document.getElementById('email');
+  var replytoInput = document.getElementById('_replyto');
+  if (emailInput && replytoInput) {
+    emailInput.addEventListener('input', function() {
+      replytoInput.value = emailInput.value;
+    });
+  }
 
   // FAQ accordion
   document.querySelectorAll('.faq-question').forEach(function(btn) {
