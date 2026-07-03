@@ -155,13 +155,30 @@
 
   /* Hero */
   .hero {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    position: relative;
     color: #fff;
     padding: 100px 24px 90px;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
   }
+  .hero-video {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 30, 60, 0.62);
+    z-index: 1;
+  }
+  .hero .container { position: relative; z-index: 2; }
   .hero h1 {
     font-size: 2.6rem;
     font-weight: 700;
@@ -562,6 +579,10 @@
 </header>
 
 <section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="img/0703.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
   <div class="container">
     <h1 data-en="Direct purchase of gold in 22-carat ingots and certified diamonds with Kimberley documentation, with the highest guarantees">Compra de oro directo en lingotes de 22 quilates y diamantes certificados con documentación Kimberley, con las máximas garantías</h1>
     <p data-en="A professional, transparent and secure supply chain for acquiring certified gold directly from Sierra Leone.">Una cadena de suministro profesional, transparente y segura para adquirir oro en lingotes certificados directamente desde Sierra Leona.</p>
