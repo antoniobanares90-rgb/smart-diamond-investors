@@ -705,7 +705,11 @@
         <div><strong data-en="Location">Ubicación</strong><span>6UN Drive Wilkinson Road, Freetown, Sierra Leone</span></div>
       </div>
     </div>
-    <form action="https://formspree.io/f/xwvdwpvq" method="POST">
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="90ee68bf-ade9-491a-8cc8-4c23c7cd67e3">
+      <input type="hidden" name="subject" value="Nueva consulta — Smart Diamond Investors">
+      <input type="hidden" name="from_name" value="Smart Diamond Investors Web">
+      <input type="hidden" name="redirect" value="false">
       <div class="form-row">
         <div>
           <label for="name" data-en="Full name">Nombre y apellidos</label>
@@ -767,8 +771,7 @@
         <label for="message" data-en="Message">Mensaje</label>
         <textarea id="message" name="mensaje" rows="5" placeholder="Cuéntanos sobre tu consulta de inversión..." data-en-ph="Tell us about your investment inquiry..." required></textarea>
       </div>
-      <input type="hidden" name="_replyto" id="_replyto">
-      <input type="hidden" name="_subject" value="Nueva consulta — Smart Diamond Investors">
+      <input type="hidden" name="replyto" id="_replyto">
       <button type="submit" data-en="Send message">Enviar mensaje</button>
     </form>
   </div>
