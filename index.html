@@ -1,3 +1,446 @@
 <!DOCTYPE html>
 <html lang="es" data-title-es="Smart Diamond Investors® | Compra de Oro en Origen" data-title-en="Smart Diamond Investors® | Direct Gold Purchase at Origin">
-  
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Diamond Investors® | Compra de Oro en Origen</title>
+<meta name="description" content="">
+<meta name="keywords" content="compra de oro, inversión en oro, oro 22 quilates, lingotes de oro, Smart Diamond Investors">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Smart Diamond Investors® | Compra de Oro en Origen">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f2742">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #0f2742;
+    --color-secondary: #1b4965;
+    --color-accent: #c9a227;
+    --color-accent-dark: #a9871d;
+    --color-bg: #ffffff;
+    --color-bg-alt: #f6f5f1;
+    --color-text: #1c1c1c;
+    --color-text-light: #5a6470;
+    --max-width: 1140px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; color: var(--color-text); line-height: 1.6; background: var(--color-bg); }
+  h1, h2, h3, .logo, .footer-logo { font-family: 'Playfair Display', Georgia, serif; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  header { position: sticky; top: 0; background: rgba(255,255,255,0.97); border-bottom: 1px solid #e9ecef; z-index: 100; backdrop-filter: blur(8px); }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 36px; gap: 20px; }
+  .logo { font-size: 1.35rem; font-weight: 700; color: var(--color-primary); white-space: nowrap; }
+  .nav-links { display: flex; gap: 28px; list-style: none; flex: 1; justify-content: center; flex-wrap: nowrap; white-space: nowrap; }
+  .nav-links a { color: var(--color-text); font-weight: 500; font-size: 0.93rem; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--color-accent-dark); }
+  .nav-right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; margin-left: auto; }
+  .lang-switch { display: grid; grid-template-columns: repeat(2, 30px); gap: 6px; align-items: center; justify-items: center; }
+  .lang-flag { width: 30px; height: 21px; border-radius: 4px; overflow: hidden; cursor: pointer; border: 2px solid transparent; opacity: 0.5; transition: opacity 0.25s, border-color 0.25s, transform 0.25s; padding: 0; background: none; display: block; }
+  .lang-flag svg { width: 100%; height: 100%; display: block; }
+  .lang-flag:hover { opacity: 0.85; transform: translateY(-1px); }
+  .lang-flag.active { opacity: 1; border-color: var(--color-accent); }
+  .nav-cta { background: var(--color-accent); color: var(--color-primary); padding: 12px 24px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; white-space: nowrap; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--color-accent-dark); }
+  .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+  .menu-toggle span { width: 24px; height: 2px; background: var(--color-primary); }
+
+  .hero { background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: #fff; padding: 100px 24px 90px; text-align: center; }
+  .hero h1 { font-size: 2.6rem; font-weight: 700; max-width: 760px; margin: 0 auto 18px; line-height: 1.25; }
+  .hero p { font-size: 1.15rem; color: #cfe0e8; max-width: 560px; margin: 0 auto 34px; }
+  .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--color-accent); color: var(--color-primary); padding: 14px 30px; border-radius: 6px; font-weight: 700; font-size: 1rem; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--color-accent-dark); }
+  .btn-secondary { background: transparent; color: #fff; padding: 14px 30px; border-radius: 6px; font-weight: 600; font-size: 1rem; border: 1px solid rgba(255,255,255,0.5); transition: background 0.2s; }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+  section { padding: 80px 0; }
+  .section-alt { background: var(--color-bg-alt); }
+  .section-header { text-align: center; max-width: 640px; margin: 0 auto 50px; }
+  .section-tag { color: var(--color-accent-dark); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 10px; }
+  .section-header h2 { font-size: 2rem; color: var(--color-primary); margin-bottom: 12px; }
+  .section-header p { color: var(--color-text-light); }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .about-grid h2 { font-size: 2rem; color: var(--color-primary); margin-bottom: 18px; }
+  .about-grid p { color: var(--color-text-light); margin-bottom: 16px; }
+  .about-image { background: var(--color-bg-alt); border-radius: 10px; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--color-text-light); font-size: 0.9rem; border: 1px dashed #c7cdd3; text-align: center; padding: 24px; }
+
+  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 900px; margin: 0 auto; }
+  .service-card { background: #fff; border: 1px solid #e3d8b0; border-radius: 14px; overflow: hidden; box-shadow: 0 18px 45px rgba(15,39,66,0.08); display: flex; flex-direction: column; }
+  .card-body { padding: 32px 32px 24px; }
+  .card-badge { display: inline-block; background: var(--color-accent); color: var(--color-primary); font-weight: 700; font-size: 0.78rem; padding: 6px 14px; border-radius: 20px; margin-bottom: 16px; }
+  .card-body h3 { color: var(--color-primary); font-size: 1.25rem; margin-bottom: 12px; line-height: 1.35; font-family: 'Playfair Display', Georgia, serif; }
+  .card-body p { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.65; }
+  .card-image-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; }
+  .card-image-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+  .faq-item { background: #fff; border: 1px solid #e9ecef; border-radius: 10px; overflow: hidden; }
+  .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 20px 26px; display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--color-primary); }
+  .faq-question .icon { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: rgba(201,162,39,0.15); color: var(--color-accent-dark); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; transition: transform 0.3s ease; }
+  .faq-item.open .faq-question .icon { transform: rotate(45deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; padding: 0 26px; }
+  .faq-item.open .faq-answer { max-height: 400px; padding: 0 26px 22px; }
+  .faq-answer p { color: var(--color-text-light); font-size: 0.95rem; margin-bottom: 10px; }
+  .faq-answer p:last-child { margin-bottom: 0; }
+  .faq-answer strong { color: var(--color-primary); }
+
+  .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+  .contact-info h2 { font-size: 2rem; color: var(--color-primary); margin-bottom: 16px; }
+  .contact-info p { color: var(--color-text-light); margin-bottom: 26px; }
+  .contact-item { display: flex; gap: 14px; margin-bottom: 18px; align-items: flex-start; }
+  .contact-item .icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(201,162,39,0.15); color: var(--color-accent-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .contact-item strong { display: block; color: var(--color-primary); font-size: 0.9rem; }
+  .contact-item span { color: var(--color-text-light); font-size: 0.9rem; }
+  form { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  label { font-size: 0.85rem; font-weight: 600; color: var(--color-primary); margin-bottom: 6px; display: block; }
+  .required-mark { color: var(--color-accent-dark); }
+  input[type="text"], input[type="email"], textarea { width: 100%; padding: 12px 14px; border: 1px solid #d8dde2; border-radius: 6px; font-size: 0.95rem; font-family: inherit; }
+  input[type="text"]:focus, input[type="email"]:focus, textarea:focus { outline: none; border-color: var(--color-accent); }
+  .radio-group { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 4px; }
+  .radio-option { display: flex; align-items: center; gap: 8px; font-size: 0.92rem; font-weight: 500; color: var(--color-text); cursor: pointer; }
+  .radio-option input[type="radio"] { width: 18px; height: 18px; accent-color: var(--color-accent-dark); cursor: pointer; }
+  button[type="submit"] { background: var(--color-accent); color: var(--color-primary); border: none; padding: 14px; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+  button[type="submit"]:hover { background: var(--color-accent-dark); }
+
+  .cta-banner { background: var(--color-primary); color: #fff; text-align: center; padding: 70px 24px; }
+  .cta-banner h2 { font-size: 1.9rem; margin-bottom: 14px; }
+  .cta-banner p { color: #cfe0e8; margin-bottom: 30px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+  footer { background: #0a1c30; color: #9fb1c0; padding: 50px 24px 24px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+  .footer-logo { color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; }
+  .footer-grid h4 { color: #fff; font-size: 0.95rem; margin-bottom: 14px; font-family: 'Inter', sans-serif; }
+  .footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-grid a { font-size: 0.9rem; transition: color 0.2s; }
+  .footer-grid a:hover { color: #fff; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.85rem; }
+
+  @media (max-width: 860px) {
+    .nav-links, .nav-cta { display: none; }
+    .menu-toggle { display: flex; }
+    .about-grid, .contact-wrap, .services-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">Smart Diamond Investors<sup>®</sup></a>
+    <ul class="nav-links">
+      <li><a href="#sobre-nosotros" data-en="About us">Sobre nosotros</a></li>
+      <li><a href="#fundador" data-en="Founder">Fundador</a></li>
+      <li><a href="#servicios" data-en="Services">Servicios</a></li>
+      <li><a href="#faq" data-en="FAQ">Preguntas frecuentes</a></li>
+      <li><a href="#contacto" data-en="Contact">Contacto</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-flag active" data-lang="es" aria-label="Español">
+          <svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="20" fill="#AA151B"/><rect y="5" width="28" height="10" fill="#F1BF00"/></svg>
+        </button>
+        <button class="lang-flag" data-lang="en" aria-label="English">
+          <svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="20" fill="#B22234"/><rect y="2" width="28" height="2" fill="#fff"/><rect y="6" width="28" height="2" fill="#fff"/><rect y="10" width="28" height="2" fill="#fff"/><rect y="14" width="28" height="2" fill="#fff"/><rect y="18" width="28" height="2" fill="#fff"/><rect width="12" height="11" fill="#3C3B6E"/></svg>
+        </button>
+        <button class="lang-flag" data-lang="fr" aria-label="Français">
+          <svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="20" fill="#fff"/><rect width="9" height="20" fill="#0055A4"/><rect x="19" width="9" height="20" fill="#EF4135"/></svg>
+        </button>
+        <button class="lang-flag" data-lang="de" aria-label="Deutsch">
+          <svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="20" fill="#000"/><rect y="6.5" width="28" height="6.5" fill="#DD0000"/><rect y="13" width="28" height="7" fill="#FFCE00"/></svg>
+        </button>
+      </div>
+      <a href="#contacto" class="nav-cta" data-en="Request consultation">Solicitar consulta</a>
+    </div>
+    <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1 data-en="Direct gold purchase at origin in Sierra Leone, in certified ingots, with the highest guarantees">Compra de oro directo en origen en Sierra Leona, en lingotes certificados, con las máximas garantías</h1>
+    <p data-en="A professional, transparent and secure supply chain for acquiring certified gold directly from Sierra Leone.">Una cadena de suministro profesional, transparente y segura para adquirir oro en lingotes certificados directamente desde Sierra Leona.</p>
+    <div class="hero-ctas">
+      <a href="#contacto" class="btn-primary" data-en="Request consultation">Solicitar consulta</a>
+      <a href="#servicios" class="btn-secondary" data-en="View services">Ver servicios</a>
+    </div>
+  </div>
+</section>
+
+<section id="sobre-nosotros">
+  <div class="container about-grid reveal visible">
+    <div>
+      <div class="section-tag" data-en="About us">Sobre nosotros</div>
+      <h2 data-en="Smart Diamond Investors®: gold investment with maximum security">Smart Diamond Investors®: inversión en oro con la máxima seguridad</h2>
+      <p data-en="Smart Diamond Investors® is a company specialized in the direct purchase of gold at origin, offering our clients access to investment opportunities through a professional, transparent and secure supply chain.">Smart Diamond Investors® somos una empresa de servicios especializada en la compra de producto directo en origen para nuestros clientes, ofreciendo acceso a oportunidades de inversión en compra directa de oro y diamantes mediante una cadena de suministro profesional, transparente y segura. El cliente puede venir él a comprar o podemos llevárselo nosotros. Gestionamos cada operación con total cumplimiento y control desde la adquisición hasta la entrega.</p>
+      <p data-en="We work with high-purity gold, mainly 22-karat quality, supplied in certified ingots.">Trabajamos con oro de alta pureza, principalmente en calidad 22 quilates, suministrado en lingotes certificados. Cada envío se gestiona bajo protocolos estrictos para mercancías de alto valor, con transporte especializado, seguimiento logístico y cobertura aseguradora cuando procede.</p>
+      <p data-en="We are a registered trademark in Spain.">Somos una marca registrada en España.</p>
+    </div>
+    <div class="about-image">[Espacio para imagen corporativa / lingotes de oro]</div>
+  </div>
+</section>
+
+<section id="servicios" class="section-alt">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div class="section-tag" data-en="Services">Servicios</div>
+      <h2 data-en="What we offer">Qué ofrecemos</h2>
+      <p data-en="Services fully managed end-to-end by our team.">Servicios gestionados de forma íntegra por nuestro equipo.</p>
+    </div>
+    <div class="services-grid reveal visible">
+      <div class="service-card">
+        <div class="card-body">
+          <span class="card-badge" data-en="Minimum purchase: 1kg">Compra mínima: 1kg</span>
+          <h3 data-en="Direct gold purchase in certified 22-karat ingots">Compra oro directo en lingotes certificados de 22 quilates</h3>
+          <p data-en="We offer the possibility of acquiring gold directly at origin through a process fully managed by our team. We handle logistics coordination, documentation, international transport and regulatory compliance, so that the client receives their investment with maximum guarantees.">Ofrecemos la posibilidad de adquirir oro directamente en origen mediante un proceso completamente gestionado por nuestro equipo. Nos encargamos de la coordinación logística, documentación, transporte internacional y cumplimiento normativo para que el cliente reciba su inversión con las máximas garantías.</p>
+        </div>
+        <div class="card-image-wrap">
+          <img src="lingote2.jpg" alt="Lingote de oro 22 quilates">
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="card-body">
+          <span class="card-badge" data-en="Kimberley Certification">Certificación Kimberley</span>
+          <h3 data-en="Purchase of rough diamonds with Kimberley documentation">Compra de diamantes en bruto con documentación Kimberley</h3>
+          <p data-en="We offer investors the possibility of acquiring certified rough diamonds with sufficient margin to generate profitability through cutting, carving, polishing and gemological certification. Each stone is carefully selected based on its quality, weight and production potential.">Ofrecemos al inversor la posibilidad de adquirir diamantes en bruto certificados con margen suficiente para generar rentabilidad a través del proceso de corte, tallado, pulido y certificación gemológica. Cada piedra es seleccionada cuidadosamente en función de su calidad, peso y potencial de producción.</p>
+        </div>
+        <div class="card-image-wrap">
+          <img src="img/diamante.jpg" alt="Diamante en bruto" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8e0cc,#d4c9a8)'">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div class="section-tag" data-en="FAQ">Preguntas frecuentes</div>
+      <h2 data-en="Frequently Asked Questions">Preguntas Frecuentes</h2>
+      <p data-en="Answers to the most common questions about our gold investment process.">Respuestas a las dudas más habituales sobre nuestro proceso de inversión en oro y diamantes.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="How does the purchase process work?">¿Cómo funciona el proceso de compra?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>Cada operación se gestiona de forma individual. Tras recibir la solicitud del cliente, se confirma la disponibilidad del producto, se establecen las condiciones comerciales y se formaliza la operación mediante la documentación correspondiente. Una vez cumplidas las condiciones acordadas, se coordina la logística internacional y la entrega de la mercancía.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span>¿Cuáles son los costes de vuestros servicios?</span><span class="icon">+</span></button>
+        <div class="faq-answer">
+          <p>Con el objetivo de garantizar un proceso de selección riguroso y ofrecer una atención personalizada de calidad, Smart Diamond Investors® establece los siguientes honorarios previos al onboarding:</p>
+          <p><strong>Consulta orientativa (1 hora): 100 €.</strong> Sesión en formato llamada en la que el cliente puede plantear todas las preguntas que considere oportunas sobre nuestros servicios, procesos operativos y condiciones de inversión.</p>
+          <p><strong>Visita presencial en Sierra Leona (1 semana): 1.200 €.</strong> Programa de inmersión en origen que permite al inversor conocer de primera mano la operativa, los proveedores y el entorno del negocio. Los gastos de viaje y alojamiento corren por cuenta del cliente.</p>
+          <p>Estos honorarios tienen carácter de filtro previo y no son reembolsables, garantizando así la seriedad y el compromiso de ambas partes antes de iniciar cualquier operación.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="What is the minimum purchase?">¿Cuál es la compra mínima?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>La compra mínima establecida por Smart Diamond Investors® es de 1kg por operación, cuyo precio dependerá del fixing de Londres, y de 20.000€ para diamante en bruto.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="What is the quality of the gold?">¿Qué calidad tiene el oro?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>Suministramos exclusivamente lingotes de oro de alta pureza conforme a las especificaciones pactadas para cada operación. Todo el material se entrega acompañado de la documentación correspondiente.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="In what format is the gold delivered?">¿En qué formato se entrega el oro?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>Nuestra actividad se limita exclusivamente al suministro de lingotes de oro. No comercializamos polvo de oro, concentrados, pepitas ni ningún otro formato.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="How is transport carried out?">¿Cómo se realiza el transporte?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>Las expediciones internacionales se realizan mediante operadores especializados en mercancías de alto valor, incluyendo Qatar Airways Cargo, Emirates SkyCargo y Turkish Cargo. Los envíos se gestionan bajo los protocolos internacionales aplicables al transporte de VAL (Valuable Cargo), garantizando la trazabilidad y seguridad de la mercancía durante todo el trayecto.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="Is the merchandise insured?">¿Está asegurada la mercancía?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>Sí. Smart Diamond Investors® no realiza ninguna expedición sin cobertura de seguro. Todas las operaciones se ejecutan conforme al Incoterm previamente pactado entre las partes, que determina la responsabilidad sobre el transporte y el aseguramiento de la mercancía.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="What documentation will I receive?">¿Qué documentación recibiré?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>Cada operación incorpora la documentación comercial, logística y de exportación exigida por la normativa aplicable y por las autoridades competentes del país de origen y del país de destino.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="How long does the process take?">¿Cuánto tarda el proceso?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>Los plazos dependen de la disponibilidad del producto, la documentación requerida, el Incoterm acordado y los procedimientos aduaneros del país de destino. El calendario de ejecución se comunica antes de formalizar la operación.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="Can I purchase as an individual?">¿Puedo comprar como particular?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>Sí, siempre que el comprador cumpla los requisitos legales, fiscales y de identificación exigidos para este tipo de operaciones.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="Can I purchase as a company?">¿Puedo comprar como empresa?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>Sí. Trabajamos con empresas, distribuidores, operadores internacionales, fondos de inversión y compradores profesionales que requieran un proveedor especializado en lingotes de oro para comercio o inversión.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="How can I request a consultation?">¿Cómo puedo solicitar una consulta?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>Las solicitudes se atienden exclusivamente a través de nuestros canales oficiales de contacto. Una vez recibida la consulta, nuestro departamento comercial facilitará la información necesaria para evaluar la operación.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-en="What payment methods do you accept?">¿Qué métodos de pago aceptan?</span><span class="icon">+</span></button>
+        <div class="faq-answer"><p>Las condiciones de pago se establecen de forma individual para cada operación y se formalizan antes de la firma del contrato de compraventa. No se acepta ninguna operación fuera de las condiciones previamente acordadas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner reveal">
+  <div class="container">
+    <h2 data-en="Looking for a reliable gold investment partner?">¿Buscas un socio fiable para invertir en oro y diamantes en bruto?</h2>
+    <p data-en="Contact us to find out about availability and conditions.">[Frase de cierre invitando a clientes a contactar para conocer disponibilidad y condiciones.]</p>
+    <a href="#contacto" class="btn-primary" data-en="Request consultation">Solicitar consulta</a>
+  </div>
+</div>
+
+<section id="contacto" class="section-alt">
+  <div class="container contact-wrap reveal">
+    <div class="contact-info">
+      <h2 data-en="Let's talk">Hablemos</h2>
+      <p data-en="Tell us about the volume and details of your investment, and we will get back to you with availability and terms.">Cuéntanos el volumen y los detalles de tu inversión, y te responderemos con disponibilidad y condiciones.</p>
+      <div class="contact-item">
+        <div class="icon">@</div>
+        <div><strong data-en="Email">Email</strong><span>[tu-email@dominio.com]</span></div>
+      </div>
+      <div class="contact-item">
+        <div class="icon">☎</div>
+        <div><strong data-en="Phone">Teléfono</strong><span>[+232 XX XXX XXXX]</span></div>
+      </div>
+      <div class="contact-item">
+        <div class="icon">📍</div>
+        <div><strong data-en="Location">Ubicación</strong><span>[Freetown / región], Sierra Leona</span></div>
+      </div>
+    </div>
+    <form>
+      <div class="form-row">
+        <div>
+          <label for="name">Nombre</label>
+          <input type="text" id="name" placeholder="Tu nombre">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="tu@email.com">
+        </div>
+      </div>
+      <div>
+        <label for="subject">Asunto</label>
+        <input type="text" id="subject" placeholder="Volumen e interés de inversión">
+      </div>
+      <div>
+        <label for="message">Mensaje</label>
+        <textarea id="message" rows="5" placeholder="Cuéntanos sobre tu consulta de inversión..."></textarea>
+      </div>
+      <div>
+        <label>Tipo de cliente <span class="required-mark">*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="tipo-cliente" value="particular" required><span>Particular</span></label>
+          <label class="radio-option"><input type="radio" name="tipo-cliente" value="profesional" required><span>Profesional / Empresa</span></label>
+        </div>
+      </div>
+      <div>
+        <label>Motivo de contacto <span class="required-mark">*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="motivo" value="visita" required><span>Quiero visitar Sierra Leona con vosotros</span></label>
+          <label class="radio-option"><input type="radio" name="motivo" value="envio" required><span>Quiero que enviéis el producto a mi país</span></label>
+        </div>
+      </div>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Smart Diamond Investors<sup>®</sup></div>
+        <p style="font-size:0.9rem;max-width:320px;">Smart Diamond Investors®: compra de oro y diamantes en bruto directo en origen en Sierra Leona certificado para clientes internacionales, con una cadena de suministro profesional, transparente y segura.</p>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>[tu-email@dominio.com]</li>
+          <li>[+232 XX XXX XXXX]</li>
+          <li>[Freetown / región], Sierra Leona</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="copyYear"></span> Smart Diamond Investors®. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('copyYear').textContent = new Date().getFullYear();
+
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    var links = document.querySelector('.nav-links');
+    var cta = document.querySelector('.nav-cta');
+    var visible = links.style.display === 'flex';
+    links.style.display = visible ? 'none' : 'flex';
+    cta.style.display = visible ? 'none' : 'inline-block';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '64px';
+    links.style.left = '0';
+    links.style.right = '0';
+    links.style.background = '#fff';
+    links.style.padding = '20px 24px';
+    links.style.gap = '16px';
+    links.style.borderBottom = '1px solid #e9ecef';
+  });
+
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i) { if (i !== item) i.classList.remove('open'); });
+      item.classList.toggle('open', !wasOpen);
+    });
+  });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+  function applyLang(lang) {
+    document.querySelectorAll('[data-en]').forEach(function(el) {
+      if (el.dataset.es === undefined) el.dataset.es = el.textContent;
+      el.textContent = lang === 'en' ? (el.dataset.en || el.dataset.es) : el.dataset.es;
+    });
+    document.title = lang === 'en' ? document.documentElement.dataset.titleEn : document.documentElement.dataset.titleEs;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-flag').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    try { localStorage.setItem('sdi-lang', lang); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-flag').forEach(function(btn) {
+    btn.addEventListener('click', function() { applyLang(btn.dataset.lang); });
+  });
+  var savedLang = 'es';
+  try { savedLang = localStorage.getItem('sdi-lang') || 'es'; } catch(e) {}
+  applyLang(savedLang);
+</script>
+</body>
+</html>
